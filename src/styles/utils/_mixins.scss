@@ -8,19 +8,19 @@
   }
 }
 
-@mixin OnTablet {
+@mixin on-tablet {
   @media (min-width: $tablet-min-width) {
     @content;
   }
 }
 
-@mixin OnDesktop {
+@mixin on-desktop {
   @media (min-width: $desktop-min-width) {
     @content;
   }
 }
 
-@mixin OnWide {
+@mixin on-wide {
   @media (min-width: $wide-min-width) {
     @content;
   }

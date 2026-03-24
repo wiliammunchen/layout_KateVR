@@ -32,11 +32,11 @@
   width: min(calc(100% - 40px), 1200px);
   margin: 0 auto;
 
-  @include OnTablet {
+  @include on-tablet {
     width: min(calc(100% - 68px), 1200px);
   }
 
-  @include OnDesktop {
+  @include on-desktop {
     width: min(calc(100% - 120px), 1220px);
   }
 }
@@ -106,13 +106,13 @@
   display: inline-flex;
   align-items: center;
 
-  &:hover .logo__image {
-    transform: scale(1.05);
-  }
-
   &__image {
     width: 78px;
     transition: transform $transition-duration $transition-timing;
+  }
+
+  &:hover .logo__image {
+    transform: scale(1.05);
   }
 }
 
@@ -212,11 +212,11 @@
   position: relative;
   padding: 24px 0 80px;
 
-  @include OnTablet {
+  @include on-tablet {
     padding: 32px 0 100px;
   }
 
-  @include OnDesktop {
+  @include on-desktop {
     padding: 40px 0 120px;
   }
 
@@ -265,7 +265,7 @@
     gap: 32px;
   }
 
-  @include OnDesktop {
+  @include on-desktop {
     &__nav,
     &__buy {
       display: block;
@@ -346,7 +346,7 @@
     display: block;
     margin-bottom: 8px;
     color: $c-text-subtle;
-    font-size: 0.875rem;
+    font-size: 0.88rem;
   }
 
   &__price-value {
@@ -389,15 +389,15 @@
     &:hover {
       transform: translateY(-6px);
     }
-
-    &:hover .hero__image {
-      transform: scale(1.04);
-    }
   }
 
   &__image {
     width: 100%;
     transition: transform $transition-duration $transition-timing;
+  }
+
+  &__media-link:hover .hero__image {
+    transform: scale(1.04);
   }
 
   &__badge {
@@ -424,7 +424,7 @@
     line-height: 1.6;
   }
 
-  @include OnTablet {
+  @include on-tablet {
     &__meta {
       grid-template-columns: auto 1fr;
       align-items: end;
@@ -528,13 +528,13 @@
     height: 18px;
   }
 
-  @include OnTablet {
+  @include on-tablet {
     &__panel {
       padding: 32px 34px 40px;
     }
   }
 
-  @include OnDesktop {
+  @include on-desktop {
     display: none;
   }
 }
@@ -569,11 +569,11 @@
   display: grid;
   gap: 20px;
 
-  @include OnTablet {
+  @include on-tablet {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  @include OnDesktop {
+  @include on-desktop {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
@@ -593,11 +593,6 @@
   &:hover {
     transform: translateY(-8px);
     border-color: $c-border-strong;
-  }
-
-  &:hover .feature-card__icon,
-  &:hover .benefit-card__icon {
-    transform: translateY(-8px) rotate(-6deg) scale(1.08);
   }
 
   &__icon-wrap {
@@ -631,12 +626,17 @@
   }
 }
 
+.feature-card:hover .feature-card__icon,
+.benefit-card:hover .benefit-card__icon {
+  transform: translateY(-8px) rotate(-6deg) scale(1.08);
+}
+
 .about {
   &__layout {
     display: grid;
     gap: 28px;
 
-    @include OnDesktop {
+    @include on-desktop {
       grid-template-columns: minmax(0, 1fr) minmax(420px, 520px);
       align-items: center;
       gap: 48px;
@@ -691,16 +691,16 @@
     &:hover {
       transform: translateY(-6px);
     }
-
-    &:hover .about__media-image {
-      transform: scale(1.04);
-    }
   }
 
   &__media-image {
     width: 100%;
     border-radius: 24px;
     transition: transform $transition-duration $transition-timing;
+  }
+
+  &__media-link:hover .about__media-image {
+    transform: scale(1.04);
   }
 
   &__video-pill {
@@ -750,7 +750,7 @@
     display: grid;
     gap: 24px;
 
-    @include OnDesktop {
+    @include on-desktop {
       grid-template-columns: minmax(340px, 0.95fr) minmax(0, 1.05fr);
       align-items: start;
       gap: 32px;
@@ -777,7 +777,7 @@
     display: grid;
     gap: 18px;
 
-    @include OnTablet {
+    @include on-tablet {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
@@ -830,7 +830,7 @@
   }
 
   &__grid {
-    @include OnDesktop {
+    @include on-desktop {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
@@ -845,12 +845,6 @@
   &__item {
     @extend %card-surface;
     overflow: hidden;
-
-    &[open] .faq__symbol {
-      transform: rotate(45deg);
-      background: $c-accent;
-      color: $c-background;
-    }
   }
 
   &__question {
@@ -892,6 +886,12 @@
       color $transition-duration $transition-timing;
   }
 
+  &__item[open] .faq__symbol {
+    transform: rotate(45deg);
+    background: $c-accent;
+    color: $c-background;
+  }
+
   &__answer {
     padding: 0 24px 24px;
     color: $c-text-muted;
@@ -904,7 +904,7 @@
     display: grid;
     gap: 24px;
 
-    @include OnDesktop {
+    @include on-desktop {
       grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
       align-items: start;
     }
@@ -960,7 +960,7 @@
     display: grid;
     gap: 28px;
 
-    @include OnDesktop {
+    @include on-desktop {
       grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
       gap: 40px;
     }
@@ -994,7 +994,7 @@
   @extend %card-surface;
   padding: 24px;
 
-  @include OnTablet {
+  @include on-tablet {
     padding: 32px;
   }
 
@@ -1038,10 +1038,6 @@
       background: rgba(5, 194, 223, 0.05);
     }
 
-    &:invalid:not(:placeholder-shown) {
-      border-color: $c-danger;
-    }
-
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus {
@@ -1050,6 +1046,10 @@
       caret-color: $c-white;
       border: 1px solid $c-border-strong;
       transition: background-color 9999s ease-out 0s;
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      border-color: $c-danger;
     }
   }
 
@@ -1085,7 +1085,7 @@
     padding-top: 24px;
     border-top: 1px solid $c-border;
 
-    @include OnDesktop {
+    @include on-desktop {
       grid-template-columns: minmax(0, 1fr) auto auto;
       align-items: start;
     }
@@ -1152,16 +1152,16 @@
       border-color: $c-border-strong;
       background: rgba(5, 194, 223, 0.1);
     }
-
-    &:hover .social-links__icon {
-      transform: scale(1.08);
-    }
   }
 
   &__icon {
     width: 20px;
     height: 20px;
     transition: transform $transition-duration $transition-timing;
+  }
+
+  &__link:hover .social-links__icon {
+    transform: scale(1.08);
   }
 }
 
@@ -1170,7 +1170,7 @@ section[id],
   scroll-margin-top: 16px;
 }
 
-@include OnTablet {
+@include on-tablet {
   .features,
   .about,
   .video,
@@ -1187,7 +1187,7 @@ section[id],
   }
 }
 
-@include OnDesktop {
+@include on-desktop {
   .features,
   .about,
   .video,
