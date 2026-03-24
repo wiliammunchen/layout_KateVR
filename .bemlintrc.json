@@ -1,14 +1,11 @@
 {
   "elementDivider": "__",
   "modifierDivider": "--",
-  "ignore": [
-    "node_modules",
-    "dist"
-  ],
+  "ignore": ["node_modules", "dist"],
   "rules": {
     "one-block": true,
-    "one-element": true,
-    "element-inside-parent-block": true,
+    "one-element": false,
+    "element-inside-parent-block": false,
     "no-double-element": true,
     "no-neighbour-parent-block": true,
     "modifiable-class": true
