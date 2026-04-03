@@ -6240,6 +6240,120 @@ section[id],
 }
 
 @media (min-width: 640px) and (max-width: 1279px) {
+  .order[data-order-current-step='1'] {
+    padding: 20px;
+
+    .order__header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      gap: 20px;
+      min-height: 77px;
+      margin-bottom: 20px;
+      padding: 0;
+    }
+
+    .order__indicators {
+      position: relative;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      margin: 10px 0 0;
+      padding-bottom: 11px;
+    }
+
+    .order__indicator {
+      padding: 0 0 11px;
+      font-size: 14px;
+      line-height: 18px;
+      white-space: nowrap;
+
+      &[data-order-indicator='1'] {
+        font-size: 0;
+        text-align: left;
+
+        &::before {
+          content: 'Place Order';
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+
+      &[data-order-indicator='3'] {
+        font-size: 0;
+        text-align: right;
+
+        &::before {
+          content: 'Complete';
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+    }
+
+    .order__body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .order__summary {
+      width: 100%;
+      margin: 0;
+    }
+
+    .order__visual {
+      width: 100%;
+      margin: 0;
+    }
+
+    .order__visual-image {
+      width: 100%;
+      height: auto;
+      aspect-ratio: auto;
+      object-fit: contain;
+    }
+
+    .order__summary-footer {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .order__summary-control {
+      gap: 10px;
+    }
+
+    .order__price-value {
+      font-size: 28px;
+      line-height: 34px;
+    }
+
+    .order__steps,
+    .order__form--place {
+      width: 100%;
+      max-width: none;
+    }
+
+    .order__place-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 10px;
+    }
+
+    .order__actions--place {
+      justify-content: flex-start;
+      margin-top: 30px;
+      padding-left: 0;
+    }
+
+    .order__purchase {
+      width: 100%;
+      min-height: 48px;
+    }
+  }
   .modal[data-modal='faq'] {
     place-items: start stretch !important;
     padding: 0 !important;
