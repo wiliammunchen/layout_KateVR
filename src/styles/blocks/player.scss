@@ -1,14 +1,16 @@
 .player {
   position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+  transform: translateY(-200%);
+
   width: 876px;
   height: 486px;
-  top: 0;
-  left: 0;
-  right: 0;
   margin: 0 auto;
-  transform: translateY(-200%);
+
   transition: transform $transition;
-  z-index: 1;
 
   &__cross {
     position: absolute;

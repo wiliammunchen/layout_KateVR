@@ -1,9 +1,12 @@
 .button {
-  background-color: transparent;
-  border: none;
-  transition: color $transition;
-  padding: 0;
   cursor: pointer;
+
+  padding: 0;
+  border: none;
+
+  background-color: transparent;
+
+  transition: color $transition;
 
   &:hover {
     color: $c-contrast;

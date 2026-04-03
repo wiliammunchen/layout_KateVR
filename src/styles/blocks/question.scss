@@ -12,11 +12,12 @@
   }
 
   &__action {
-    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding-top: 20px;
+
+    width: 100%;
     margin-bottom: 18px;
+    padding-top: 20px;
 
     @include OnDesktop {
       padding-top: 18px;
@@ -24,8 +25,8 @@
   }
 
   &__arrow {
-    display: none;
     transform: rotateZ(-90deg);
+    display: none;
     transition: transform 0.4s;
 
     @include OnDesktop {
@@ -38,16 +39,17 @@
   }
 
   &__title {
-    font-weight: 400;
     font-size: 16px;
+    font-weight: 400;
     line-height: 150%;
     color: $c-contrast;
   }
 
   &__answer {
     margin-bottom: 10px;
-    font-weight: 400;
+
     font-size: 16px;
+    font-weight: 400;
     line-height: 150%;
     color: $c-text;
 
@@ -62,8 +64,9 @@
 
   &__time-updated {
     margin-bottom: 12px;
-    font-weight: 400;
+
     font-size: 12px;
+    font-weight: 400;
     line-height: 150%;
     color: $c-darkGrey;
 
@@ -73,8 +76,8 @@
   }
 
   &__text {
-    max-height: 0;
     overflow: hidden;
+    max-height: 0;
     transition: max-height $transition;
 
     &--active {

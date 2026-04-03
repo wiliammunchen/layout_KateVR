@@ -16,15 +16,15 @@
 
     @include OnTablet {
       flex-direction: row;
-      justify-content: center;
       gap: 45px;
+      justify-content: center;
     }
   }
 
   &__media {
     display: flex;
-    align-items: flex-end;
     gap: 28px;
+    align-items: flex-end;
   }
 
   &__contacts-mobile {

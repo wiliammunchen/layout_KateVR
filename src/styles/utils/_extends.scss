@@ -4,11 +4,12 @@
 %heading-quantum {
   font-family: $font-heading;
   font-weight: 400;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 %card-surface {
   @include surface-card;
+
   border-radius: $radius-m;
 }

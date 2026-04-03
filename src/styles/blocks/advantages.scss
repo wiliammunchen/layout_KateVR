@@ -13,11 +13,14 @@
 
   &__buy {
     display: none;
-    margin: 0 auto;
+
     width: 200px;
-    text-align: center;
-    line-height: 48px;
+    margin: 0 auto;
     border-radius: 4px;
+
+    line-height: 48px;
+    text-align: center;
+
     background-color: $c-contrast;
 
     @include OnDesign {

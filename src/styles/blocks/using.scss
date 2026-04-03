@@ -2,16 +2,16 @@
   background-color: $c-background;
 
   &__grid {
-    align-items: baseline;
     gap: 20px;
+    align-items: baseline;
   }
 
   &__title {
     margin-bottom: 12px;
 
     @include OnTablet {
-      text-align: center;
       margin-bottom: 12px;
+      text-align: center;
     }
 
     @include OnDesktop {
@@ -23,8 +23,8 @@
     margin-bottom: 30px;
 
     @include OnTablet {
-      text-align: center;
       margin-bottom: 50px;
+      text-align: center;
     }
 
     @include OnDesktop {
@@ -37,8 +37,8 @@
   cursor: pointer;
 
   &__photo {
-    width: 100%;
     grid-column: 2 / 4;
+    width: 100%;
     transition: transform $transition;
   }
 
@@ -60,11 +60,12 @@
 
   &__title {
     margin-bottom: 11px;
-    text-transform: uppercase;
-    font-weight: 900;
+
     font-size: 16px;
+    font-weight: 900;
     line-height: 19px;
     color: $c-white;
+    text-transform: uppercase;
 
     @include OnTablet {
       margin-bottom: 20px;

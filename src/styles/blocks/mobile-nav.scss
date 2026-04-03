@@ -1,8 +1,8 @@
 .mobile {
   &__link {
     display: block;
-    line-height: 49px;
     font-size: 21px;
+    line-height: 49px;
   }
 
   &__list-item {
@@ -32,25 +32,29 @@
 
   &__back {
     margin-top: 20px;
-    margin-left: 21px;
     margin-bottom: 40px;
+    margin-left: 21px;
 
     @include OnTablet {
       margin-top: 33px;
-      margin-left: 33px;
       margin-bottom: 47px;
+      margin-left: 33px;
     }
   }
 
   &__nav {
-    height: 100vh;
-    overflow-y: auto;
-    background-color: #191536;
     position: fixed;
     top: 0;
-    left: 0;
     right: 0;
+    left: 0;
     transform: translateX(0%);
+
+    overflow-y: auto;
+
+    height: 100vh;
+
+    background-color: #191536;
+
     transition: transform $transition;
 
     @include OnTablet {
@@ -78,14 +82,15 @@
   }
 
   &__language {
-    // display: none;
-    height: 100vh;
-    background-color: #191536;
     position: fixed;
     top: 0;
-    left: 0;
     right: 0;
+    left: 0;
     transform: translate(100%, -200%);
+    height: 100vh;
+
+    background-color: #191536;
+
     transition: transform ($transition * 2);
 
     @include OnTablet {
@@ -93,7 +98,6 @@
     }
 
     &:target {
-      // display: block;
       transform: translate(100%, 0%);
     }
 

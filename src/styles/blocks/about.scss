@@ -21,8 +21,8 @@
   }
 
   &__img-counter {
-    font-weight: 400;
     font-size: 14px;
+    font-weight: 400;
     line-height: 17px;
     color: $c-contrast;
   }
@@ -66,12 +66,13 @@
   }
 
   &__subtitle {
-    font-weight: 400;
+    margin-top: 80px;
+    margin-bottom: 11px;
+
     font-size: 14px;
+    font-weight: 400;
     line-height: 17px;
     color: $c-contrast;
-    margin-bottom: 11px;
-    margin-top: 80px;
 
     @include OnDesktop {
       margin-bottom: 15px;
@@ -91,15 +92,17 @@
     }
 
     &-text {
-      writing-mode: tb-rl;
       width: max-content;
+
+      writing-mode: tb-rl;
       font-family: sans-serif;
-      white-space: nowrap;
-      color: transparent;
-      font-weight: 900;
       font-size: 64px;
+      font-weight: 900;
       line-height: 130%;
+      color: transparent;
       text-transform: uppercase;
+      white-space: nowrap;
+
       -webkit-text-stroke: 1px $c-contrast;
 
       @for $i from 0 through 7 {

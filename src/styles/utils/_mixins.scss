@@ -27,12 +27,12 @@
 }
 
 @mixin surface-card {
+  border: 1px solid $c-border;
   background: linear-gradient(
     180deg,
     rgba(24, 29, 60, 0.9) 0%,
     rgba(11, 14, 31, 0.9) 100%
   );
-  border: 1px solid $c-border;
-  box-shadow: $shadow-surface;
   backdrop-filter: blur(18px);
+  box-shadow: $shadow-surface;
 }

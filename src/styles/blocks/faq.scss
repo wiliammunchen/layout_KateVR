@@ -1,13 +1,17 @@
 .faq {
-  height: 100vh;
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
   transform: translateY(-200%);
-  background-color: #191536;
-  transition: transform 1s;
+
   overflow-y: scroll;
+
+  height: 100vh;
+
+  background-color: #191536;
+
+  transition: transform 1s;
 
   @include OnDesktop {
     max-width: 1100px;
@@ -38,37 +42,39 @@
   &__action {
     display: flex;
     justify-content: end;
-    padding-top: 20px;
+
     margin-right: 20px;
     margin-bottom: 30px;
+    padding-top: 20px;
 
     @include OnTablet {
-      padding-top: 34px;
-      margin-bottom: 50px;
       margin-right: 34px;
+      margin-bottom: 50px;
+      padding-top: 34px;
     }
 
     @include OnDesktop {
-      padding-top: 28px;
-      margin-bottom: 25px;
       margin-right: 28px;
+      margin-bottom: 25px;
+      padding-top: 28px;
     }
   }
 
   &__title {
     margin-bottom: 30px;
-    color: $c-white;
-    font-weight: 900;
+
     font-size: 21px;
+    font-weight: 900;
     line-height: 130%;
+    color: $c-white;
 
     @include OnDesktop {
       margin-bottom: 37px;
     }
 
     &--color-part {
-      color: $c-contrast;
       font-weight: 400;
+      color: $c-contrast;
     }
 
     &--br {
@@ -94,8 +100,9 @@
 
     &-text {
       padding: 10px;
-      font-weight: 500;
+
       font-size: 16px;
+      font-weight: 500;
       line-height: 150%;
       color: $c-contrast;
     }

@@ -1,31 +1,55 @@
 @font-face {
-  font-family: 'Mark Pro';
-  src: url('../fonts/FontFont_FF.Mark.Pro.otf') format('opentype');
-  font-style: normal;
+  font-family: Inter;
   font-weight: 400;
+  font-style: normal;
   font-display: swap;
+  src: local('Inter');
 }
 
 @font-face {
-  font-family: 'Mark Pro';
-  src: url('../fonts/FontFont_FF.Mark.Pro.Medium.otf') format('opentype');
-  font-style: normal;
+  font-family: Inter;
   font-weight: 500;
+  font-style: normal;
   font-display: swap;
+  src: local('Inter Medium');
+}
+
+@font-face {
+  font-family: Inter;
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: local('Inter Black');
 }
 
 @font-face {
   font-family: 'Mark Pro';
-  src: url('../fonts/FontFont_FF.Mark.Pro.Heavy.otf') format('opentype');
+  font-weight: 400;
   font-style: normal;
-  font-weight: 700;
   font-display: swap;
+  src: url('../fonts/FontFont_FF.Mark.Pro.otf') format('opentype');
 }
 
 @font-face {
-  font-family: 'Quantum';
-  src: url('../fonts/Quantum-400.otf') format('opentype');
+  font-family: 'Mark Pro';
+  font-weight: 500;
   font-style: normal;
-  font-weight: 400;
   font-display: swap;
+  src: url('../fonts/FontFont_FF.Mark.Pro.Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Mark Pro';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/FontFont_FF.Mark.Pro.Heavy.otf') format('opentype');
+}
+
+@font-face {
+  font-family: Quantum;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/Quantum-400.otf') format('opentype');
 }
