@@ -6240,118 +6240,146 @@ section[id],
 }
 
 @media (min-width: 640px) and (max-width: 1279px) {
-  .order[data-order-current-step='1'] {
-    padding: 20px;
+  .order {
+    padding: 30px 40px;
 
-    .order__header {
+    &__header {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      justify-content: center;
-      gap: 20px;
-      min-height: 77px;
-      margin-bottom: 20px;
+      grid-template-areas:
+        'logo . close'
+        'indicators indicators indicators';
+      grid-template-columns: 80px 1fr 40px;
+      row-gap: 40px;
       padding: 0;
+      margin-bottom: 40px;
     }
 
-    .order__indicators {
+    &__close {
       position: relative;
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      margin: 10px 0 0;
-      padding-bottom: 11px;
+      top: auto;
+      right: auto;
+      grid-area: close;
+      justify-self: end;
     }
 
-    .order__indicator {
-      padding: 0 0 11px;
+    &__logo {
+      grid-area: logo;
+    }
+
+    &__indicators {
+      grid-area: indicators;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-items: center;
+      gap: 0;
+      width: 100%;
+      margin: 0;
+      padding-bottom: 20px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: 1px solid #2f2f2f;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 33.33%;
+        border-bottom: 2px solid $c-accent;
+        transition: left 0.3s;
+      }
+    }
+
+    &__indicator {
       font-size: 14px;
-      line-height: 18px;
-      white-space: nowrap;
+      padding: 0 0 11px;
+
+      &::after {
+        display: none;
+      }
 
       &[data-order-indicator='1'] {
         font-size: 0;
-        text-align: left;
-
         &::before {
           content: 'Place Order';
           font-size: 14px;
-          line-height: 18px;
         }
       }
-
       &[data-order-indicator='3'] {
         font-size: 0;
-        text-align: right;
-
         &::before {
           content: 'Complete';
           font-size: 14px;
-          line-height: 18px;
         }
       }
     }
 
-    .order__body {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      justify-content: center;
-      gap: 20px;
+    &__body {
+      display: block;
       width: 100%;
+      margin-inline: auto;
     }
 
-    .order__summary {
+    &__visual {
       width: 100%;
-      margin: 0;
+      max-width: 524px;
+      margin: 0 auto;
     }
 
-    .order__visual {
-      width: 100%;
-      margin: 0;
-    }
-
-    .order__visual-image {
+    &__visual-image {
       width: 100%;
       height: auto;
       aspect-ratio: auto;
       object-fit: contain;
     }
 
-    .order__summary-footer {
+    &__summary {
+      width: 100%;
+      margin: 0 0 40px;
+    }
+
+    &__summary-footer {
       display: flex;
-      justify-content: space-between;
-      width: 100%;
-      margin-top: 20px;
-    }
-
-    .order__summary-control {
-      gap: 10px;
-    }
-
-    .order__price-value {
-      font-size: 28px;
-      line-height: 34px;
-    }
-
-    .order__steps,
-    .order__form--place {
-      width: 100%;
-      max-width: none;
-    }
-
-    .order__place-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 20px 10px;
-    }
-
-    .order__actions--place {
       justify-content: flex-start;
+      gap: 80px;
       margin-top: 30px;
-      padding-left: 0;
     }
 
-    .order__purchase {
+    &__steps {
       width: 100%;
-      min-height: 48px;
+    }
+
+    &__place-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px 20px;
+    }
+
+    &__actions--place {
+      justify-content: flex-start;
+      margin-top: 40px;
+    }
+
+    &__purchase {
+      width: 380px;
+      max-width: 100%;
+    }
+  }
+
+  .order[data-order-current-step='2'] {
+    .order__indicators::after {
+      left: 33.33%;
+    }
+  }
+
+  .order[data-order-current-step='3'] {
+    .order__indicators::after {
+      left: 66.67%;
     }
   }
   .modal[data-modal='faq'] {
