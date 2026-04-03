@@ -2093,8 +2093,8 @@
 
   &__indicators {
     display: flex;
-    flex-wrap: wrap;
-    gap: 16px 28px;
+    flex-wrap: nowrap;
+    gap: 16px 78px;
     min-width: 0;
   }
 
@@ -6054,36 +6054,13 @@ section[id],
     &__indicators {
       position: relative;
 
-      display: grid;
-      grid-template-columns: 79px 25px 65px;
-      gap: 0;
-      justify-content: space-between;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 78px;
+      justify-content: center;
 
-      width: 584px;
-      margin: 30px 0 0 54px;
+      margin: 30px 0 0;
       padding-bottom: 11px;
-
-      &::before {
-        content: '';
-
-        position: absolute;
-        bottom: 0;
-        left: -88px;
-
-        width: 768px;
-        border-bottom: 1px solid #2f2f2f;
-      }
-
-      &::after {
-        content: '';
-
-        position: absolute;
-        bottom: 0;
-        left: -88px;
-
-        width: 256px;
-        border-bottom: 2px solid $c-accent;
-      }
     }
 
     &__indicator {
@@ -6140,11 +6117,6 @@ section[id],
   }
 
   .order[data-order-current-step='1'] {
-    .order__indicators::after {
-      left: -88px;
-      width: 256px;
-    }
-
     .order__body {
       display: block;
       width: 700px;
@@ -6248,20 +6220,8 @@ section[id],
     }
   }
 
-  .order[data-order-current-step='2'] {
-    .order__indicators::after {
-      left: 168px;
-      width: 256px;
-    }
-  }
-
   .order[data-order-current-step='3'] {
     min-height: 100dvh;
-
-    .order__indicators::after {
-      left: 424px;
-      width: 256px;
-    }
 
     .order__complete {
       gap: 36px;
