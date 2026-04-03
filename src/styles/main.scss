@@ -6045,10 +6045,13 @@ section[id],
     }
 
     &__header {
-      gap: 0;
+      display: grid;
+      grid-template-columns: 594px 700px;
+      justify-content: center;
+      gap: 40px;
       min-height: 77px;
       margin-bottom: 40px;
-      padding: 0 34px;
+      padding: 0;
     }
 
     &__indicators {
@@ -6057,21 +6060,17 @@ section[id],
       display: flex;
       flex-wrap: nowrap;
       gap: 78px;
-      justify-content: center;
+      justify-content: flex-start;
 
       margin: 30px 0 0;
       padding-bottom: 11px;
     }
 
     &__indicator {
-      padding: 0;
+      padding: 0 0 11px;
       font-size: 14px;
       line-height: 18px;
       white-space: nowrap;
-
-      &::after {
-        display: none;
-      }
 
       &[data-order-indicator='1'] {
         font-size: 0;
@@ -6118,14 +6117,15 @@ section[id],
 
   .order[data-order-current-step='1'] {
     .order__body {
-      display: block;
-      width: 700px;
-      margin-inline: auto;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      width: 100%;
     }
 
     .order__summary {
-      width: 700px;
-      margin: 0 0 48px;
+      width: auto;
+      margin: 0;
     }
 
     .order__visual {
