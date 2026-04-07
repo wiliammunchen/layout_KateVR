@@ -6047,11 +6047,15 @@ section[id],
     &__header {
       display: grid;
       grid-template-columns: 594px 700px;
-      justify-content: center;
       gap: 40px;
+      justify-content: center;
       min-height: 77px;
       margin-bottom: 40px;
-      padding: 0;
+      padding: 30px 0 0;
+    }
+
+    &__logo {
+      margin-left: 70px;
     }
 
     &__indicators {
@@ -6059,10 +6063,10 @@ section[id],
 
       display: flex;
       flex-wrap: nowrap;
-      gap: 78px;
-      justify-content: flex-start;
+      gap: 0;
+      justify-content: space-between;
 
-      margin: 30px 0 0;
+      margin: 0;
       padding-bottom: 11px;
     }
 
@@ -6346,8 +6350,8 @@ section[id],
 
     &__summary-footer {
       display: flex;
-      justify-content: flex-start;
       gap: 80px;
+      justify-content: flex-start;
       margin-top: 30px;
     }
 
