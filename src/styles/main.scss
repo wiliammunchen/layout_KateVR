@@ -4292,7 +4292,7 @@ section[id],
     padding: 32px 0 56px;
 
     &__top {
-      margin-bottom: 72px;
+      margin-bottom: 42px;
     }
 
     &__bottom {
@@ -5993,8 +5993,15 @@ section[id],
   }
 
   .modal[data-modal='order'] {
+    --order-modal-scale: 0.9;
+
     place-items: start stretch;
     padding: 0;
+    background: linear-gradient(107.56deg, #191536 0%, #000 100%);
+
+    .modal__backdrop {
+      background: transparent;
+    }
 
     .modal__dialog {
       overflow: visible;
@@ -6008,6 +6015,11 @@ section[id],
   }
 
   .order {
+    transform-origin: top center;
+    transform: scale(var(--order-modal-scale));
+
+    overflow: hidden;
+
     box-sizing: border-box;
     width: 100%;
     min-height: 100dvh;
@@ -6018,11 +6030,15 @@ section[id],
 
     &__logo {
       --logo-width: 67px;
+
+      grid-column: 1;
+      grid-row: 1;
+      margin-left: var(--order-logo-start);
     }
 
     &__close {
-      top: 29px;
-      right: 35px;
+      top: 70px;
+      right: 0;
 
       width: 24px;
       height: 24px;
@@ -6045,38 +6061,50 @@ section[id],
     }
 
     &__header {
-      display: grid;
-      grid-template-columns: 594px 700px;
-      gap: 40px;
-      justify-content: center;
-      min-height: 77px;
-      margin-bottom: 40px;
-      padding: 30px 0 0;
-    }
+      --order-logo-start: 100px;
+      --order-indicator-end: 1053px;
+      --order-indicator-step: calc(
+        (var(--order-indicator-end) - var(--order-logo-start)) / 3
+      );
+      --order-indicator-step-double: calc(var(--order-indicator-step) * 2);
 
-    &__logo {
-      margin-left: 70px;
+      display: grid;
+      grid-template-columns: 684px 680px;
+      gap: 20px;
+      justify-content: center;
+
+      width: 1384px;
+      max-width: calc(100vw - 260px);
+      min-height: 77px;
+      margin-bottom: 36px;
+      margin-inline: auto;
+      padding: 70px 0 0;
     }
 
     &__indicators {
-      position: relative;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      left: 0;
 
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 0;
-      justify-content: space-between;
+      display: block;
 
       margin: 0;
-      padding-bottom: 11px;
+      padding-bottom: 0;
     }
 
     &__indicator {
+      position: absolute;
+      top: 0;
+
       padding: 0 0 11px;
+
       font-size: 14px;
       line-height: 18px;
       white-space: nowrap;
 
       &[data-order-indicator='1'] {
+        left: calc(var(--order-logo-start) + var(--order-indicator-step));
         font-size: 0;
         text-align: left;
 
@@ -6088,15 +6116,19 @@ section[id],
       }
 
       &[data-order-indicator='2'] {
-        text-align: center;
+        left: calc(
+          var(--order-logo-start) + var(--order-indicator-step-double)
+        );
+        text-align: left;
       }
 
       &[data-order-indicator='3'] {
+        left: calc(var(--order-indicator-end) - 32px);
         font-size: 0;
-        text-align: right;
+        text-align: left;
 
         &::before {
-          content: 'Complete';
+          content: 'Order complete';
           font-size: 14px;
           line-height: 18px;
         }
@@ -6121,37 +6153,44 @@ section[id],
 
   .order[data-order-current-step='1'] {
     .order__body {
-      display: flex;
+      display: grid;
+      grid-template-columns: 684px 680px;
+      gap: 20px;
       justify-content: center;
-      gap: 40px;
-      width: 100%;
+
+      width: 1384px;
+      max-width: calc(100vw - 260px);
+      margin-inline: auto;
     }
 
     .order__summary {
-      width: auto;
+      width: 684px;
       margin: 0;
     }
 
     .order__visual {
-      width: 524px;
+      width: 734px;
       max-width: none;
-      margin: 0 0 0 70px;
+      margin-left: -25px;
     }
 
     .order__visual-image {
       aspect-ratio: auto;
-      width: 524px;
-      height: 277px;
-      object-fit: contain;
+      width: 734px;
+      height: 388px;
+
+      object-fit: cover;
+      object-position: center 58%;
     }
 
     .order__summary-footer {
       grid-template-columns: 90px 109px;
       gap: 0 148px;
       align-items: start;
+      justify-content: center;
 
-      width: 347px;
-      margin: 3px 0 0 1px;
+      width: 684px;
+      margin: 72px auto 0;
     }
 
     .order__summary-control {
@@ -6182,12 +6221,12 @@ section[id],
 
     .order__steps,
     .order__form--place {
-      width: 700px;
+      width: 680px;
       max-width: none;
     }
 
     .order__place-grid {
-      grid-template-columns: 340px 341px;
+      grid-template-columns: 330px 331px;
       gap: 40px 19px;
     }
 
@@ -6211,11 +6250,10 @@ section[id],
     .order__actions--place {
       justify-content: flex-start;
       margin-top: 58px;
-      padding-left: 124px;
     }
 
     .order__purchase {
-      width: 458px;
+      width: 320px;
       min-width: 0;
       min-height: 48px;
 
@@ -6254,14 +6292,16 @@ section[id],
         'indicators indicators indicators';
       grid-template-columns: 80px 1fr 40px;
       row-gap: 40px;
-      padding: 0;
+
       margin-bottom: 40px;
+      padding: 0;
     }
 
     &__close {
       position: relative;
       top: auto;
       right: auto;
+
       grid-area: close;
       justify-self: end;
     }
@@ -6271,38 +6311,46 @@ section[id],
     }
 
     &__indicators {
-      grid-area: indicators;
       position: relative;
+
       display: grid;
+      grid-area: indicators;
       grid-template-columns: 1fr 1fr 1fr;
-      justify-items: center;
       gap: 0;
+      justify-items: center;
+
       width: 100%;
       margin: 0;
       padding-bottom: 20px;
 
       &::before {
         content: '';
+
         position: absolute;
         bottom: 0;
         left: 0;
+
         width: 100%;
         border-bottom: 1px solid #2f2f2f;
       }
+
       &::after {
         content: '';
+
         position: absolute;
         bottom: 0;
         left: 0;
+
         width: 33.33%;
         border-bottom: 2px solid $c-accent;
+
         transition: left 0.3s;
       }
     }
 
     &__indicator {
-      font-size: 14px;
       padding: 0 0 11px;
+      font-size: 14px;
 
       &::after {
         display: none;
@@ -6337,9 +6385,9 @@ section[id],
     }
 
     &__visual-image {
+      aspect-ratio: auto;
       width: 100%;
       height: auto;
-      aspect-ratio: auto;
       object-fit: contain;
     }
 
